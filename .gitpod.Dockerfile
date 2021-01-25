@@ -26,3 +26,8 @@ RUN echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.lis
 RUN curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | apt-key add
 
 RUN apt-get update && apt-get install -y sbt
+
+# Install jekyll
+RUN apt-get install -y ruby-full build-essential zlib1g-dev
+
+RUN gem install jekyll bundler
